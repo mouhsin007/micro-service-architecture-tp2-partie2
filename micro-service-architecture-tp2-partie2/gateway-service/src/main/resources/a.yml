@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: lb://BENEFICIAIRE-SERVICE
+          predicates:
+            - Path= /beneficiaires/**
+        - id: r2
+          uri: lb://VIREMENT-SERVICE
+          predicates:
+            - Path= /virements/**
+
+
+
